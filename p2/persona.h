@@ -5,7 +5,7 @@ using namespace std;
 
 class Persona{
   private:
-    string dni_;
+    string DNI_;
     string nombre_;
     string apellidos_;
     int edad_;
@@ -15,32 +15,35 @@ class Persona{
     string pais_;
 
   public:
-    Persona();
-    void persona(string dni,);
-    inline void setDni(string dni){dni_=dni;}
-    inline string getDni(){return dni_;}
+    Persona(string dni,string nombre="",string apellidos="",int edad=0,string direccion="",string localidad="",string provincia="",string pais="") {DNI_=dni;nombre_=nombre;apellidos_=apellidos;edad_=edad;direccion_=direccion;localidad_=localidad;provincia_=provincia;pais_=pais;}
+    inline void setDNI(string dni){DNI_=dni;}
+    inline string const getDNI(){return DNI_;}
     inline void setNombre(string nombre){nombre=nombre_;}
-    inline string getNombre(){return nombre_;}
+    inline string const getNombre(){return nombre_;}
     inline void setApellidos(string apellidos){apellidos=apellidos_;}
-    inline string getApellidos(){return apellidos_;}
+    inline string const getApellidos(){return apellidos_;}
     inline bool setEdad(int edad){if((edad>=0)&&(edad%2==0)){
       edad_=edad;
       return true;
       }else{return false;}
     }
-    inline int getEdad(){return edad_;}
+    inline int getEdad() const {return edad_;}
     inline void setDireccion(string direccion){direccion_=direccion;}
-    inline string getDireccion(){return direccion_;}
+    inline string getDireccion() const {return direccion_;}
     inline void setLocalidad(string localidad){localidad_=localidad;}
-    inline string getLocalidad(){return localidad_;}
+    inline string getLocalidad() const {return localidad_;}
     inline void setProvincia(string provincia){provincia_=provincia;}
-    inline string getProvincia(){return provincia_;}
+    inline string getProvincia() const {return provincia_;}
     inline void setPais(string pais){pais_=pais;}
-    inline string getPais(){return pais_;}
-    void getApellidosyNombre();
+    inline string getPais() const {return pais_;}
+    string getApellidosyNombre() const {string apellidosNombre; apellidosNombre=apellidos_+", "+nombre_; return apellidosNombre;}
+    inline bool mayor() const {
+      if(edad_<=17){
+        return false;
+      }else{return true;}
+    }
+
 };
-
-
 
 
 
