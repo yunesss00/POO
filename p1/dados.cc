@@ -13,8 +13,10 @@ Dados::Dados(){
   cont2_=0;
   sum1_=0;
   sum2_=0;
-  v1_[5]={0,0,0,0,0};
-  v2_[5]={0,0,0,0,0};
+  for(int i_=0;i_<5;i_++){
+    v1_[i_]=0;
+    v2_[i_]=0;
+  }
 }
 void Dados::lanzamiento(){
   d1_=(rand()%6)+1;
@@ -23,7 +25,8 @@ void Dados::lanzamiento(){
   cont2_++;
   sum1_=sum1_+d1_;
   sum2_=sum2_+d2_;
-  
+  rellenaVector1();
+  rellenaVector2();
 
 }
 
@@ -40,6 +43,7 @@ bool Dados::setDado1(int num1){
     d1_=num1;
     cont1_++;
     sum1_=sum1_+num1;
+    rellenaVector1();
     return true;
   }else{
     return false;
@@ -51,6 +55,7 @@ bool Dados::setDado2(int num2){
     d2_=num2;
     cont2_++;
     sum2_=sum2_+num2;
+    rellenaVector2();
     return true;
   }else{
     return false;
@@ -66,33 +71,73 @@ int Dados::getDiferencia(){
   if(d1_<=d2_){
     menor=d1_;
     mayor=d2_;
+  }else{
+    menor=d2_;
+    mayor=d1_;
   }
   diferencia=mayor-menor;
   return diferencia;
 }
 
-int Dados::getLazamientos1(){
+int Dados::getLanzamientos1(){
   return cont1_;
 }
 
-int Dados::getLazamientos2(){
+int Dados::getLanzamientos2(){
   return cont2_;
 }
 
 float Dados::getMedia1(){
-  return sum1_/cont1_;
+  if(cont1_==0){
+    return 0;
+  }else{
+    return (float)sum1_/cont1_;
+  }
 }
 
 float Dados::getMedia2(){
-  return sum2_/cont2_;
+  if(cont2_==0){
+    return 0;
+  }else{
+    return (float)sum2_/cont2_;
+  }
+}
+void Dados::rellenaVector1 (){
+
+	int i;
+
+	for(i=4;i>=0;i--){
+	v1_[i]=v1_[i-1];
+	}
+	v1_[0]=d1_;
 }
 
-int Dados::getUltimos1(){
+void Dados::rellenaVector2 (){
 
-  return v1_;
+	int i;
+
+	for(i=4;i>=0;i--){
+	v2_[i]=v2_[i-1];
+	}
+	v2_[0]=d2_;
 }
 
-int Dados::getUltimos2(){
+void Dados::getUltimos1(int *v){
 
-  return v2_;
+	int i;
+
+	for(i=0;i<5;i++){
+
+	v[i]=v1_[i];
+	}
+}
+
+void Dados::getUltimos2(int *v){
+
+	int i;
+
+	for(i=0;i<5;i++){
+
+	v[i]=v2_[i];
+	}
 }

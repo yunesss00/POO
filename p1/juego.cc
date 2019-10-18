@@ -54,13 +54,15 @@ int main() {
       case 5: cout<<"La diferencia entre el menor y el mayor es: "<<d.getDiferencia()<<endl;
       break;
 
-      case 6: cout<<"El numero de lanzamientos del dado 1 es: "<<d.getLazamientos1()<<endl;
-              cout<<"El numero de lanzamientos del dado 2 es: "<<d.getLazamientos2()<<endl;
+      case 6: cout<<"El numero de lanzamientos del dado 1 es: "<<d.getLanzamientos1()<<endl;
+              cout<<"El numero de lanzamientos del dado 2 es: "<<d.getLanzamientos2()<<endl;
       break;
-      
+
       case 7: cout<<"La media de los numeros lanzados en el dado 1 es: "<<d.getMedia1()<<endl;
               cout<<"La media de los numeros lanzados en el dado 2 es: "<<d.getMedia2()<<endl;
       break;
+
+
 
       default: cout<<"Saliendo del programa..."<<endl;
     }

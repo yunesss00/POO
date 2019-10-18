@@ -146,3 +146,23 @@ TEST(Dados,Media2){
   EXPECT_GT(3.6,d.getMedia2());
   EXPECT_LT(3.7,d.getMedia2());
 }
+
+//Test de vector ultimos
+TEST (Dados, getUltimos) {
+
+	Dados d;
+	int i;
+	int v1[5],v2[5];
+	for(i=1;i<6;i++){
+	d.setDado1(i);
+	d.setDado2(i);
+	}
+	d.getUltimos1(v1);
+	d.getUltimos2(v2);
+
+	for (i=0;i<5;i++){
+	EXPECT_EQ(5-i,v1[i]);
+	EXPECT_EQ(5-i,v2[i]);
+	}
+
+}

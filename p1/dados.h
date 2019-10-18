@@ -8,10 +8,9 @@ private:
   int d2_;
   int cont1_;
   int cont2_;
-  float sum1_;
-  float sum2_;
-  int v1_[5];
-  int v2_[5];
+  int sum1_;
+  int sum2_;
+	int v1_[5], v2_[5];
 
 public:
   Dados();
@@ -22,12 +21,14 @@ public:
   bool setDado2(int num2);
   int getSuma();
   int getDiferencia();
-  int getLazamientos1();
-  int getLazamientos2();
+  int getLanzamientos1();
+  int getLanzamientos2();
   float getMedia1();
   float getMedia2();
-  int getUltimos1();
-  int getUltimos2();
+  void rellenaVector1 ();
+  void rellenaVector2 ();
+  void getUltimos1(int *v);
+  void getUltimos2(int *v);
 };
 
 
