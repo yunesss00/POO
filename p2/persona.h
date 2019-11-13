@@ -22,7 +22,7 @@ class Persona{
     inline string const getNombre(){return nombre_;}
     inline void setApellidos(string apellidos){apellidos=apellidos_;}
     inline string const getApellidos(){return apellidos_;}
-    inline bool setEdad(int edad){if((edad>=0)&&(edad%2==0)){
+    inline bool setEdad(int edad){if(edad>=0){
       edad_=edad;
       return true;
       }else{return false;}
