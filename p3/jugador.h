@@ -11,6 +11,7 @@
 #include <list>
 #include <cstdlib>
 
+//Estructura Apuesta que almacena los datos de las apuestas
 struct Apuesta{
 	int tipo;
 	string valor;
@@ -20,27 +21,26 @@ struct Apuesta{
 
 using namespace std;
 
+//La clase jugador tambien heredada de la clase persona
 class Jugador: public Persona{
 
 private:
 
 	int dinero_;
 	string codigo_;
+	//Una lista del tipo estructura (Apuesta) llamada apuestas_, un atributo de la clase jugador
 	list <Apuesta> apuestas_;
 
 public:
-
+	//Constructor de la clase jugador con parametros obligatorios el dni y el codigo
 	Jugador(string dni,string codigo,string nombre="",string apellidos="",int edad=0,string direccion ="",string localidad="",string provincia="",string pais="") : Persona(dni,nombre,apellidos,edad,direccion,localidad,provincia,pais) {codigo_=codigo; dinero_=1000;};
 
-	//set y get de la variable codigo
 	inline string getCodigo (){ return codigo_;};
 	inline void setCodigo (string codigo){codigo_=codigo;};
 
-	//set y get de la variable dinero
 	inline int getDinero (){ return dinero_;};
 	inline void setDinero (int dinero){dinero_=dinero;};
 
-	//get de la lista apuestas
 	inline list <Apuesta> getApuestas(){return apuestas_;};
 	void setApuestas();
 

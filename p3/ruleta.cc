@@ -52,26 +52,41 @@ void Ruleta::leeJugadores(){
   fichJugadores.open("jugadores.txt");
   jugadores_.clear();
 
-  while(getline(fichJugador,cadena,",")&&!fichJugadores.eof()){
-    aux.setDNI(aux);
-    getline(fichJugadores,cadena,",");
-    aux.setCodigo(aux);
-    getline(fichJugadores,cadena,",");
-    aux.setNombre(aux);
-    getline(fichJugadores,cadena,",");
-    aux.setApellidos(aux);
-    getline(fichJugadores,cadena,",");
-    aux.setDireccion(aux);
-    getline(fichJugadores,cadena,",");
-    aux.setProvincia(aux);
-    getline(fichJugadores,cadena,",");
-    aux.setLocalidad(aux);
-    getline(fichJugadores,cadena,",");
-    aux.setPais(aux);
-    getline(fichJugadores,cadena,"\n");
-    aux.setDinero(atoi(aux.c_str()));
+  while(getline(fichJugadores,cadena,',')&&!fichJugadores.eof()){
+    aux.setDNI(cadena);
+    getline(fichJugadores,cadena,',');
+    aux.setCodigo(cadena);
+    getline(fichJugadores,cadena,',');
+    aux.setNombre(cadena);
+    getline(fichJugadores,cadena,',');
+    aux.setApellidos(cadena);
+    getline(fichJugadores,cadena,',');
+    aux.setDireccion(cadena);
+    getline(fichJugadores,cadena,',');
+    aux.setProvincia(cadena);
+    getline(fichJugadores,cadena,',');
+    aux.setLocalidad(cadena);
+    getline(fichJugadores,cadena,',');
+    aux.setPais(cadena);
+    getline(fichJugadores,cadena,'\n');
+    aux.setDinero(atoi(cadena.c_str()));
 
-    jugadores_.push_back();
+    jugadores_.push_back(aux);
   }
-  fichJugador,",");.close();
+  fichJugadores.close();
+}
+
+void Ruleta::getPremios(){
+  list <Jugador>::iterator i;
+  
+  for(i=jugadores_.begin();i!=jugadores_.end();i++){
+
+  }
+
+
+
+
+
+
+
 }
