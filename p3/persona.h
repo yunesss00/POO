@@ -23,9 +23,9 @@ class Persona{
     Persona(string dni,string nombre="",string apellidos="",int edad=0,string direccion="",string localidad="",string provincia="",string pais="") {DNI_=dni;nombre_=nombre;apellidos_=apellidos;edad_=edad;direccion_=direccion;localidad_=localidad;provincia_=provincia;pais_=pais;};
     inline void setDNI(string dni){DNI_=dni;}
     inline string const getDNI(){return DNI_;}
-    inline void setNombre(string nombre){nombre_=nombre;}
+    inline void setNombre(string nombre){nombre=nombre_;}
     inline string const getNombre(){return nombre_;}
-    inline void setApellidos(string apellidos){apellidos_=apellidos;}
+    inline void setApellidos(string apellidos){apellidos=apellidos_;}
     inline string const getApellidos(){return apellidos_;}
     inline bool setEdad(int edad){if(edad>=0){
       edad_=edad;

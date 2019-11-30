@@ -14,7 +14,7 @@
 
 # Points to the root of Google Test, relative to where this file is.
 # Remember to tweak this if you move this file.
-GTEST_DIR = /home/yunesss_00/UNI/POO/googletest
+GTEST_DIR = /home/yunesss_00/POO/googletest
 
 # Where to find user code.
 # USER_DIR = ../samples
@@ -25,7 +25,7 @@ GTEST_DIR = /home/yunesss_00/UNI/POO/googletest
 CPPFLAGS += -isystem $(GTEST_DIR)/include
 
 # Flags passed to the C++ compiler.
-CXXFLAGS += -g -Wall -Wextra -pthread -std=gnu++11
+CXXFLAGS += -g -Wall -Wextra -pthread
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
@@ -85,9 +85,10 @@ jugador_unittest.o : jugador_unittest.cc jugador.cc jugador.h
 
 persona_unittest : persona.o persona_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $^ -o $@
-
+	
 crupier_unittest : crupier.o persona.o crupier_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $^ -o $@
 
 jugador_unittest : jugador.o persona.o jugador_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $^ -o $@
+
